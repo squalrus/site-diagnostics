@@ -26,6 +26,9 @@ var diag = function() {
     'a[href=""] {background: fuchsia;}'
   ];
 
+  // Key listing
+  this.k = []
+
 };
 
 /*
