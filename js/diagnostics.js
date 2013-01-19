@@ -28,12 +28,21 @@ var diag = function() {
 
 };
 
+/*
+ * run() executes the diagnostic styling
+ */
 diag.prototype.run = function() {
   var s = document.createElement('style');
   s.innerHTML = this.r.join('');
   document.head.appendChild(s);
+
+  // Logging
+  console.log('Running diagnostics...');
 };
 
+/*
+ * rules() shows the rule set
+ */
 diag.prototype.rules = function() {
   var p = document.createElement('div');
   p.className = 'diagnostics-panel-rules';
@@ -47,16 +56,24 @@ diag.prototype.rules = function() {
 
   document.body.appendChild(p);
 
+  // Logging
+  console.log('Show Rules Panel...');
+
+};
+
+/*
+ * key() shows the key
+ */
+diag.prototype.key = function() {
+
+
+  // Logging
+  console.log('Show key...');
 };
 
 
-
+// Attach instance of diagnostics
 window.diagnostics = window.diagnostics || new diag;
-
-/*
- * run() executes the diagnostic styling
- */
-
 
 (function() {
   diagnostics.run();

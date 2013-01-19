@@ -1,18 +1,18 @@
 /* DIAGNOSTICS PANEL
 ------------------------------------------------------------------ */
 .diagnostics-panel-rules {
-    background: #AAA;
-    height: 600px;
-    padding: 10px;
+    background: #DDD;
+    opacity: 0.9;
+    padding: 8px 10px;
     position: fixed;
     right: 0;
     top: 0;
-    width: 250px;
+    width: 300px;
 }
 
 .diagnostics-panel-rules p {
     color: #333;
-    font-size: 11px;
+    font-size: 12px;
     margin: 2px 0;
     padding: 0;
 }
