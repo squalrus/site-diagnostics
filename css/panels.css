@@ -1,5 +1,6 @@
 /* DIAGNOSTICS PANEL
 ------------------------------------------------------------------ */
+.diagnostics-panel-key,
 .diagnostics-panel-rules {
     background: #DDD;
     opacity: 0.9;
@@ -10,11 +11,17 @@
     width: 300px;
 }
 
+.diagnostics-panel-key p,
 .diagnostics-panel-rules p {
     color: #333;
     font-size: 12px;
     margin: 2px 0;
     padding: 0;
+}
+
+.diagnostics-panel-key p span,
+.diagnostics-panel-rules p span {
+    float: right;
 }
 
 

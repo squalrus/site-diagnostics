@@ -7,19 +7,53 @@
     <link rel="stylesheet" type="text/css" href="css/panels.css">
 </head>
 <body>
-    <p>Empty div</p>
+    <h3>Empty div, span, li, p, td, th</h3>
     <div></div>
 
-    <p>Empty span</p>
-    <span></span>
+    <h3>Use of style attribute, font tag, center tag</h3>
+    <span style="">this tag has a style attribute</span>
 
-    <p>Empty li</p>
-    <ul>
-        <li></li>
-    </ul>
+    <h3>Empty class, id, alt, or missing alt</h3>
+    <span class="">this tag has an empty class attribute</span>
 
-    <p>Empty p</p>
-    <p></p>
+    <h3>Empty image alt attribute</h3>
+    <img src="" title="title" alt="" />
+
+    <h3>Missing image alt attribute</h3>
+    <img src="" title="title" />
+
+    <h3>Empty image title attribute</h3>
+    <img src="" title="" alt="alt" />
+
+    <h3>Missing image title attribute</h3>
+    <img src="" alt="alt" />
+
+    <h3>Empty table summary attribute</h3>
+    <table summary="">
+        <tr><td>one cell</td><td>two cell</td></tr>
+    </table>
+
+    <h3>Missing table summary attribute</h3>
+    <table>
+        <tr><td>one cell</td><td>two cell</td></tr>
+    </table>
+
+    <h3>Use of table scope attribute not set to "col" or "row"</h3>
+    <table summary="summary">
+        <tr><th>one cell</th><th>two cell</th></tr>
+    </table>
+
+    <h3>Missing anchor title attribute</h3>
+    <a href="http://github.com/">link</a>
+
+    <h3>Empty anchor title attribute</h3>
+    <a href="http://github.com/" title="">link</a>
+
+    <h3>Use of anchor href attribute set to "#"</h3>
+    <a href="#" title="title">link</a>
+
+    <h3>Empty anchor href attribute</h3>
+    <a href="" title="title">link</a>
 
     <script src="js/diagnostics.js"></script>
 </body>
