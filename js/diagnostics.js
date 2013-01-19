@@ -34,6 +34,21 @@ diag.prototype.run = function() {
   document.head.appendChild(s);
 };
 
+diag.prototype.rules = function() {
+  var p = document.createElement('div');
+  p.className = 'diagnostics-panel-rules';
+  var style =[];
+
+  for (var i=0; i<this.r.length; i++) {
+   style.push('<p>' + this.r[i] + '</p>');
+  }
+
+  p.innerHTML = style.join('');
+
+  document.body.appendChild(p);
+
+};
+
 
 
 window.diagnostics = window.diagnostics || new diag;
@@ -44,5 +59,6 @@ window.diagnostics = window.diagnostics || new diag;
 
 
 (function() {
-  // diagnostics.run();
+  diagnostics.run();
+  diagnostics.rules();
 })();

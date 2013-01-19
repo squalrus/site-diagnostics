@@ -1,0 +1,22 @@
+/* DIAGNOSTICS PANEL
+------------------------------------------------------------------ */
+.diagnostics-panel-rules {
+    background: #AAA;
+    height: 600px;
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+}
+
+.diagnostics-panel-rules p {
+    color: #333;
+    font-size: 11px;
+    margin: 2px 0;
+    padding: 0;
+}
+
+
+/* DIAGNOSTICS PANEL
+------------------------------------------------------------------ */
