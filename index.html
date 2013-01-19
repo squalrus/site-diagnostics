@@ -2,17 +2,43 @@
 <html>
 <head>
     <title>Site Diagnostics</title>
-    <link rel="stylesheet" type="text/css" href="css/diagnostics.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="http://chadschulz.com/some.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/diagnostics.min.css" />
 
     <!-- PANELS -->
-    <link rel="stylesheet" type="text/css" href="css/panels.css">
+    <link rel="stylesheet" type="text/css" href="css/panels.css" />
 </head>
 <body>
-    <div></div>
-    <span></span>
+
+    <h1>Site Diagnostics</h1>
+
+    <p>THis diagnostic styling utilizes the styling and rules created by Eric Meyer ( http://meyerweb.com/eric/tools/css/diagnostics/ ).</p>
+
+    <p>There are three levels of integration in which the diagnostics can be used in a project.</p>
+
+    <h3>1. Bookmark Button</h3>
+
+    <p>This is the easiest and most straightforward use of diagnostics. Use the provided link as a shortcut in your browser and run the most basic implementation on ANY site! Awesome!</p>
 
     <a href="">Diagnose!</a>
 
-    <script src="js/diagnostics.js"></script>
+    <h3>2. Installing in application</h3>
+
+    <p>Include the JavaScript file in your application and start up the diagnostic feates with easy commands in your console window.</p>
+
+    <p>diagnostics.run() will run your markup through the styling rules</p>
+
+    <p>diagnostics.rules() will show a panel with the current styling rules applied</p>
+
+    <p>diagnostics.key() will show a panel with a key for the styling rules applied</p>
+
+    <p>diagnostics.add('el1 in el2') will allow the addition of layout rules [COMING SOON]</p>
+
+    <h3>3. App</h3>
+
+    <p>One script tag will refrence the files and have your site diagnosed with the latest and greatest version of the application.</p>
+
+    <p>[COMING SOON]</p>
+
 </body>
 </html>
