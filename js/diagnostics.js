@@ -47,8 +47,12 @@ var diag = function() {
     ['&lt;a&gt; missing title: ', 'solid red border', 'red'],
     ['&lt;a&gt; empty title: ', 'dotted red border', 'red'],
     ['&lt;a&gt; href set to #: ', 'lime background', 'lime'],
-    ['&lt;a&gt; empty href: ', 'fuchsia background', 'fuchsia']
+    ['&lt;a&gt; empty href: ', 'fuchsia background', 'fuchsia'],
+    ['Custom bad layout: ', 'aqua background', 'aqua']
   ];
+
+  // Custom highlighting
+  this.highlite = '{border: 5px solid aqua;}';
 
 };
 
@@ -117,12 +121,33 @@ diag.prototype.key = function() {
   console.log('Show key...');
 };
 
+/*
+ * add(rule)
+ * @param <String> rule a rule to validate
+ */
+ diag.prototype.add = function(rule) {
+  var elements = rule.split(' '),
+      first = elements[0],
+      second = elements[2],
+      action = elements[1];
+
+  switch (action) {
+    case 'in':
+      this.r.push(second + ' ' + first + this.highlite);
+      break;
+  }
+
+  // Logging
+  console.log('Adding rule: ' + second + ' ' + first + this.highlite);
+ };
+
 
 // Attach instance of diagnostics
 window.diagnostics = window.diagnostics || new diag;
 
 (function() {
-  diagnostics.run();
-  //diagnostics.rules();
-  diagnostics.key();
+  // diagnostics.add('.parent in .child')
+  // diagnostics.run();
+  // diagnostics.rules();
+  // diagnostics.key();
 })();

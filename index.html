@@ -3,57 +3,100 @@
 <head>
     <title>Test Harness | Site Diagnostics</title>
 
+    <link rel="stylesheet" type="text/css" href="http://chadschulz.com/css/cs.min.css" />
+
     <!-- PANELS -->
-    <link rel="stylesheet" type="text/css" href="css/panels.css">
+    <link rel="stylesheet" type="text/css" href="css/panels.css" />
 </head>
 <body>
-    <h3>Empty div, span, li, p, td, th</h3>
-    <div></div>
+    <div class="container">
+        <h1>Test Harness</h1>
+    </div>
 
-    <h3>Use of style attribute, font tag, center tag</h3>
-    <span style="">this tag has a style attribute</span>
+    <div class="container">
+        <section>
+            <h3>Empty div, span, li, p, td, th</h3>
+            <div></div>
+        </section>
 
-    <h3>Empty class, id, alt, or missing alt</h3>
-    <span class="">this tag has an empty class attribute</span>
+        <section>
+            <h3>Use of style attribute, font tag, center tag</h3>
+            <span style="">this tag has a style attribute</span>
+        </section>
 
-    <h3>Empty image alt attribute</h3>
-    <img src="" title="title" alt="" />
+        <section>
+            <h3>Empty class, id, alt, or missing alt</h3>
+            <span class="">this tag has an empty class attribute</span>
+        </section>
 
-    <h3>Missing image alt attribute</h3>
-    <img src="" title="title" />
+        <section>
+            <h3>Empty image alt attribute</h3>
+            <img src="" title="title" alt="" />
+        </section>
 
-    <h3>Empty image title attribute</h3>
-    <img src="" title="" alt="alt" />
+        <section>
+            <h3>Missing image alt attribute</h3>
+            <img src="" title="title" />
+        </section>
 
-    <h3>Missing image title attribute</h3>
-    <img src="" alt="alt" />
+        <section>
+            <h3>Empty image title attribute</h3>
+            <img src="" title="" alt="alt" />
+        </section>
 
-    <h3>Empty table summary attribute</h3>
-    <table summary="">
-        <tr><td>one cell</td><td>two cell</td></tr>
-    </table>
+        <section>
+            <h3>Missing image title attribute</h3>
+            <img src="" alt="alt" />
+        </section>
 
-    <h3>Missing table summary attribute</h3>
-    <table>
-        <tr><td>one cell</td><td>two cell</td></tr>
-    </table>
+        <section>
+            <h3>Empty table summary attribute</h3>
+            <table summary="">
+                <tr><td>one cell</td><td>two cell</td></tr>
+            </table>
+        </section>
 
-    <h3>Use of table scope attribute not set to "col" or "row"</h3>
-    <table summary="summary">
-        <tr><th>one cell</th><th>two cell</th></tr>
-    </table>
+        <section>
+            <h3>Missing table summary attribute</h3>
+            <table>
+                <tr><td>one cell</td><td>two cell</td></tr>
+            </table>
+        </section>
 
-    <h3>Missing anchor title attribute</h3>
-    <a href="http://github.com/">link</a>
+        <section>
+            <h3>Use of table scope attribute not set to "col" or "row"</h3>
+            <table summary="summary">
+                <tr><th>one cell</th><th>two cell</th></tr>
+            </table>
+        </section>
 
-    <h3>Empty anchor title attribute</h3>
-    <a href="http://github.com/" title="">link</a>
+        <section>
+            <h3>Missing anchor title attribute</h3>
+            <a href="http://github.com/">link</a>
+        </section>
 
-    <h3>Use of anchor href attribute set to "#"</h3>
-    <a href="#" title="title">link</a>
+        <section>
+            <h3>Empty anchor title attribute</h3>
+            <a href="http://github.com/" title="">link</a>
+        </section>
 
-    <h3>Empty anchor href attribute</h3>
-    <a href="" title="title">link</a>
+        <section>
+            <h3>Use of anchor href attribute set to "#"</h3>
+            <a href="#" title="title">link</a>
+        </section>
+
+        <section>
+            <h3>Empty anchor href attribute</h3>
+            <a href="" title="title">link</a>
+        </section>
+
+        <section>
+            <h3>Custom layout rule</h3>
+            <div class="child">
+                <div class="parent">'parent in child'</div>
+            </div>
+        </section>
+    </div>
 
     <script src="js/diagnostics.js"></script>
 </body>
