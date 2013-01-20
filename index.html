@@ -41,16 +41,32 @@
             <h3>2. Installing in application</h3>
             <p>Include the JavaScript file in your application and start up the diagnostic feates with easy commands in your console window.</p>
 
+            <a href="https://github.com/squalrus/site-diagnostics" class="btn btn-diagnose" target="_blank">Download!</a>
+
             <h4>Current API</h4>
             <ul>
-                <li><code>diagnostics.run()</code> will run your markup through the styling rules</li>
-                <li><code>diagnostics.rules()</code> will show a panel with the current styling rules applied</li>
-                <li><code>diagnostics.key()</code> will show a panel with a key for the styling rules applied</li>
+                <li>
+                    <p><code>diagnostics.run()</code></p>
+                    <p><strong>Details: </strong>Execute the current styling rules by adding them to the page.</p>
+                </li>
+                <li>
+                    <p><code>diagnostics.rules()</code></p>
+                    <p><strong>Details: </strong>Show a panel of the current styling rules applied.</p>
+                </li>
+                <li>
+                    <p><code>diagnostics.key()</code></p>
+                    <p><strong>Details: </strong>Show a panel of a key for the styling rules applied.</p>
+                </li>
+                <li>
+                    <p><code>diagnostics.add('el1 in el2')</code></p>
+                    <p><strong>Details: </strong>Add a custom layout rule as a string. Currently allows keyword <code>'in'</code> to create the unwanted styling rule of <code>'element1 in element2'</code>.</p>
+                    <p><strong>Example: </strong><code>diagnostics.add('.parent in .child')</code></p>
+                </li>
             </ul>
 
             <h4>Roadmap</h4>
             <ul>
-                <li><code>diagnostics.add('el1 in el2')</code> will allow the addition of layout rules [COMING SOON]</li>
+                <li>something else</li>
             </ul>
         </div>
     </section>
