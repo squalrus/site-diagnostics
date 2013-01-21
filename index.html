@@ -31,7 +31,7 @@
     <section>
         <div class="container">
             <h3>1. Bookmark Button</h3>
-            <p>This is the easiest and most straightforward use of diagnostics. Use the provided link as a shortcut in your browser and run the most basic implementation on ANY site! Awesome!</p>
+            <p>This is the easiest and most straightforward use of the diagnostics. Drag the link to your bookmarks bar and run diagnostics on ANY site! Awesome!</p>
             <a href="javascript:var r = ['div:empty, span:empty,','li:empty, p:empty,','td:empty, th:empty {padding: 0.5em; background: yellow;}','*[style], font, center {outline: 5px solid red;}','*[class=&quot;&quot;], *[id=&quot;&quot;] {outline: 5px dotted red;}','img[alt=&quot;&quot;] {border: 3px dotted red;}','img:not([alt]) {border: 5px solid red;}','img[title=&quot;&quot;] {outline: 3px dotted fuchsia;}','img:not([title]) {outline: 5px solid fuchsia;}','table:not([summary]) {outline: 5px solid red;}','table[summary=&quot;&quot;] {outline: 3px dotted red;}','th {border: 2px solid red;}','th[scope=&quot;col&quot;], th[scope=&quot;row&quot;] {border: none;}','a[href]:not([title]) {border: 5px solid red;}','a[title=&quot;&quot;] {outline: 3px dotted red;}','a[href=&quot;#&quot;] {background: lime;}','a[href=&quot;&quot;] {background: fuchsia;}'];var s = document.createElement('style');s.innerHTML = this.r.join('');document.head.appendChild(s);void(0);" class="btn btn-diagnose">Diagnose!</a>
         </div>
     </section>
@@ -39,7 +39,7 @@
     <section>
         <div class="container">
             <h3>2. Installing in application</h3>
-            <p>Include the JavaScript file in your application and start up the diagnostic feates with easy commands in your console window.</p>
+            <p>Include the JavaScript file in your application and run the diagnostics with easy commands in your browser's console window.</p>
 
             <a href="https://github.com/squalrus/site-diagnostics" class="btn btn-diagnose" target="_blank">Download!</a>
 
@@ -59,14 +59,18 @@
                 </li>
                 <li>
                     <p><code>diagnostics.add('el1 in el2')</code></p>
-                    <p><strong>Details: </strong>Add a custom layout rule as a string. Currently allows keyword <code>'in'</code> to create the unwanted styling rule of <code>'element1 in element2'</code>.</p>
-                    <p><strong>Example: </strong><code>diagnostics.add('.parent in .child')</code></p>
+                    <p><strong>Details: </strong>Add a custom layout rule as a string. Use keyword <code>'in'</code> to create the rule of <code>'element1 in element2'</code>.</p>
+                    <p><strong>Example: </strong><code>diagnostics.add('.parent in .child')</code> (will highlight parent if found in child)</p>
                 </li>
             </ul>
 
             <h4>Roadmap</h4>
             <ul>
-                <li>something else</li>
+                <li>
+                    <p><code>diagnostics.add('el1 with el2')</code></p>
+                    <p><strong>Details: </strong>Add a custom layout rule as a string. Use keyword <code>'with'</code> to create the rule of <code>'element1 with element2'</code>.</p>
+                    <p><strong>Example: </strong><code>diagnostics.add('.dark with .light')</code> (will highlight element if light found with dark)</p>
+                </li>
             </ul>
         </div>
     </section>
