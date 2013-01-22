@@ -1,5 +1,6 @@
 /*
-* Diagnostics
+* diagnostics js
+* Freely distributed under the MIT license.
 * @version 0.9.0
 * @author Chad Schulz
 */
