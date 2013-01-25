@@ -13,6 +13,7 @@
         <h1>Test Harness</h1>
     </div>
 
+    <!--
     <div class="container">
         <h3>Test some things with some buttons!</h3>
 
@@ -31,6 +32,34 @@
             <input type="text" id="diag-second" />
             <a href="javascript:void(0)" id="diagnosticsAdd" class="btn" title="Add Rule">Add Rule</a>
         </p>
+    </div>
+    -->
+
+    <div class="diagnostics-dashboard">
+        <div id="diagnostics-content">
+            <div class="title">Diagnostics Dashboard</div>
+
+            <div>
+                <a href="javascript:void(0)" id="diagnosticsRun" class="btn" title="Run Diagnostics">Run Diagnostics</a>
+            </div>
+
+            <div>
+                <input type="text" id="diag-first" size="12" />
+                <select id="diag-verb">
+                    <option value="in">in</option>
+                    <option value="with">with</option>
+                </select>
+                <input type="text" id="diag-second" size="12" />
+                <a href="javascript:void(0)" id="diagnosticsAdd" class="btn" title="Add Rule">Add Rule</a>
+            </div>
+        </div>
+
+        <ul>
+            <li><a href="javascript:void(0)" id="diagnosticsToggle" title="Hide">hide</a></li>
+            <li><a href="#">add</a></li>
+            <li><a href="javascript:void(0)" id="diagnosticsRules" title="Show Rules">Rules</a></li>
+            <li><a href="javascript:void(0)" id="diagnosticsKey" title="Show Key">Key</a></li>
+        </ul>
     </div>
 
     <div class="container">
@@ -118,31 +147,7 @@
         </section>
     </div>
 
-    <script src="js/diagnostics.js"></script>
-    <script>
-        document.getElementById('diagnosticsRun').addEventListener('click', function(event) {
-            diagnostics.run();
-            event.preventDefault();
-        });
-
-        document.getElementById('diagnosticsRules').addEventListener('click', function(event) {
-            diagnostics.rules();
-            event.preventDefault();
-        });
-
-        document.getElementById('diagnosticsKey').addEventListener('click', function(event) {
-            diagnostics.key();
-            event.preventDefault();
-        });
-
-        document.getElementById('diagnosticsAdd').addEventListener('click', function(event) {
-            var f = document.getElementById('diag-first').value,
-                v = document.getElementById('diag-verb').value,
-                s = document.getElementById('diag-second').value;
-
-            diagnostics.add(f + ' ' + v + ' ' + s);
-            event.preventDefault();
-        });
-    </script>
+    <!-- <script src="js/diagnostics.js"></script> -->
+    <script src="js/diagnostics-full.js"></script>
 </body>
 </html>
