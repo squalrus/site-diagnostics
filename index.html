@@ -14,6 +14,26 @@
     </div>
 
     <div class="container">
+        <h3>Test some things with some buttons!</h3>
+
+        <p><a href="javascript:void(0)" id="diagnosticsRun" class="btn" title="Run Diagnostics">Run Diagnostics</a></p>
+
+        <p><a href="javascript:void(0)" id="diagnosticsRules" class="btn" title="Show Rules">Show Rules</a></p>
+
+        <p><a href="javascript:void(0)" id="diagnosticsKey" class="btn" title="Show Key">Show Key</a></p>
+
+        <p>
+            <input type="text" id="diag-first" />
+            <select id="diag-verb">
+                <option value="in">in</option>
+                <option value="with">with</option>
+            </select>
+            <input type="text" id="diag-second" />
+            <a href="javascript:void(0)" id="diagnosticsAdd" class="btn" title="Add Rule">Add Rule</a>
+        </p>
+    </div>
+
+    <div class="container">
         <section>
             <h3>Empty div, span, li, p, td, th</h3>
             <div></div>
@@ -99,5 +119,30 @@
     </div>
 
     <script src="js/diagnostics.js"></script>
+    <script>
+        document.getElementById('diagnosticsRun').addEventListener('click', function(event) {
+            diagnostics.run();
+            event.preventDefault();
+        });
+
+        document.getElementById('diagnosticsRules').addEventListener('click', function(event) {
+            diagnostics.rules();
+            event.preventDefault();
+        });
+
+        document.getElementById('diagnosticsKey').addEventListener('click', function(event) {
+            diagnostics.key();
+            event.preventDefault();
+        });
+
+        document.getElementById('diagnosticsAdd').addEventListener('click', function(event) {
+            var f = document.getElementById('diag-first').value,
+                v = document.getElementById('diag-verb').value,
+                s = document.getElementById('diag-second').value;
+
+            diagnostics.add(f + ' ' + v + ' ' + s);
+            event.preventDefault();
+        });
+    </script>
 </body>
 </html>

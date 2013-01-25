@@ -132,16 +132,22 @@ diag.prototype.key = function() {
   var elements = rule.split(' '),
       first = elements[0],
       second = elements[2],
-      action = elements[1];
+      action = elements[1],
+      fullRule;
 
   switch (action) {
     case 'in':
-      this.r.push(second + ' ' + first + this.highlite);
+      fullRule = second + ' ' + first + ' ' + this.highlite;
+      this.r.push(fullRule);
+      break;
+    case 'with':
+      fullRule = second + first + ' ' + this.highlite;
+      this.r.push(fullRule);
       break;
   }
 
   // Logging
-  console.log('Adding rule: ' + second + ' ' + first + this.highlite);
+  console.log('Adding rule: ' + fullRule);
  };
 
 
