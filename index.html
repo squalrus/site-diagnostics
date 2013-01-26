@@ -14,13 +14,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
 <body>
-    <nav class="navbar">
+    <nav id="navbar" class="navbar">
         <div class="container">
             <ul>
                 <li><a href="http://chadschulz.com/">Chad Schulz</a></li>
                 <li class="current"><a href="http://squalrus.github.com/site-diagnostics/"><i class="icon-"></i> Site Diagnostics</a></li>
                 <li><a href="http://squalrus.github.com/notification-buddy/"><i class="icon-"></i> Notification Buddy</a></li>
             </ul>
+            <a href="#" id="nav-button" class="nav-button">&#8801;</a>
         </div>
     </nav>
 
@@ -100,5 +101,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
     </script>
+
+    <script src="http://chadschulz.com/js/cs.responsive.js"></script>
 </body>
 </html>
