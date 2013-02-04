@@ -150,7 +150,7 @@ diag.prototype.run = function() {
  */
 diag.prototype.rules = function() {
   var p = document.createElement('div');
-  p.className = 'diagnostics-panel-rules';
+
   var els =[];
 
   for (var i=0; i<this._r.length; i++) {
@@ -159,6 +159,7 @@ diag.prototype.rules = function() {
 
   p.innerHTML = els.join('');
 
+  document.getElementById('diagnostics-content').innerHTML = '';
   document.getElementById('diagnostics-content').appendChild(p);
 
   // Logging
