@@ -60,78 +60,18 @@ var diag = function() {
   this.initialize();
 };
 
+diag.prototype.log = function(msg) {
+  if(console && console.log) {
+    console.log('Site Diagnosics: ' + msg);
+  }
+};
+
 
 diag.prototype.initialize = function() {
   this.buildDashboard();
 
-  console.log('do stuff');
+  this.log('Initializing');
 };
-
-diag.prototype.buildDashboard = function() {
-
-  // Build the dashboard element
-  /*
-  var dash = document.createElement('div');
-  var dashboard = '<div class="diagnostics-dashboard"><div class="title">Diagnostics Dashboard</div><p>Use the dashboard to run, show the rules, or show the key.</p><p><a href="javascript:void(0)" id="diagnosticsRun" class="btn" title="Run Diagnostics">Run Diagnostics</a><a href="javascript:void(0)" id="diagnosticsRules" class="btn" title="Show Rules">Show Rules</a><a href="javascript:void(0)" id="diagnosticsKey" class="btn" title="Show Key">Show Key</a></p><p>Or add a friggin\' rule -- sweet!</p><p><input type="text" id="diag-first" size="12" /><select id="diag-verb"><option value="in">in</option><option value="with">with</option></select><input type="text" id="diag-second" size="12" /><a href="javascript:void(0)" id="diagnosticsAdd" class="btn" title="Add Rule">Add Rule</a></p></div>';
-
-  dash.innerHTML = dashboard;
-
-  document.body.appendChild(dash);
-  */
-  document.getElementById('diagnosticsToggle').addEventListener('click', function(event) {
-      if (event.target.className === 'collapsed')
-        diagnostics.show();
-      else
-        diagnostics.hide();
-      event.preventDefault();
-  });
-
-  document.getElementById('diagnosticsRun').addEventListener('click', function(event) {
-      diagnostics.run();
-      event.preventDefault();
-  });
-
-  document.getElementById('diagnosticsRules').addEventListener('click', function(event) {
-      diagnostics.rules();
-      event.preventDefault();
-  });
-
-  document.getElementById('diagnosticsKey').addEventListener('click', function(event) {
-      diagnostics.key();
-      event.preventDefault();
-  });
-
-  document.getElementById('diagnosticsAdd').addEventListener('click', function(event) {
-      var f = document.getElementById('diag-first').value,
-          v = document.getElementById('diag-verb').value,
-          s = document.getElementById('diag-second').value;
-
-      diagnostics.add(f + ' ' + v + ' ' + s);
-      event.preventDefault();
-  });
-
-};
-
-diag.prototype.hide = function() {
-  var dc = document.getElementById('diagnostics-content');
-  dc.style.display = 'none';
-
-  var btn = document.getElementById('diagnosticsToggle');
-  btn.innerText = 'show';
-  btn.className = 'collapsed';
-  btn.title = 'show';
-};
-
-diag.prototype.show = function() {
-  var dc = document.getElementById('diagnostics-content');
-  dc.style.display = 'block';
-
-  var btn = document.getElementById('diagnosticsToggle');
-  btn.innerText = 'hide';
-  btn.className = '';
-  btn.title = 'hide';
-};
-
 
 /*
  * run() executes the diagnostic styling
@@ -142,13 +82,89 @@ diag.prototype.run = function() {
   document.head.appendChild(s);
 
   // Logging
-  console.log('Running diagnostics...');
+  this.log('Running Diagnostics');
+};
+
+diag.prototype.buildDashboard = function() {
+
+  // Build the dashboard element
+  var title = ['<div class="title">Diagnostics</div>',
+              '<a href="javascript:void(0)" id="diagnosticsRun" class="btn" title="Run Diagnostics">Run Diagnostics</a>'];
+
+  var dashboard = document.getElementById('diagnostics-title');
+
+  dashboard.innerHTML = title.join('');
+
+
+  var self = this;
+
+  document.getElementById('diagnosticsRun').addEventListener('click', function(event) {
+      self.run();
+      event.preventDefault();
+  });
+
+  document.getElementById('diagnosticsToggle').addEventListener('click', function(event) {
+      if (event.target.className === 'collapsed')
+        self.show();
+      else
+        self.hide();
+      event.preventDefault();
+  });
+
+  document.getElementById('diagnosticsAdd').addEventListener('click', function(event) {
+      self.showAdd();
+      event.preventDefault();
+  });
+
+  document.getElementById('diagnosticsRules').addEventListener('click', function(event) {
+      self.showRules();
+      event.preventDefault();
+  });
+
+  document.getElementById('diagnosticsKey').addEventListener('click', function(event) {
+      self.showKey();
+      event.preventDefault();
+  });
+
+  //logging
+  this.log('Building Dashboard');
+
 };
 
 /*
- * rules() shows the rule set
+ * hide() Hide the Diagnostics panel
  */
-diag.prototype.rules = function() {
+diag.prototype.hide = function() {
+  var dc = document.getElementById('diagnostics-content');
+  dc.style.display = 'none';
+
+  var btn = document.getElementById('diagnosticsToggle');
+  btn.innerText = 'show';
+  btn.className = 'collapsed';
+  btn.title = 'show';
+
+  this.log('Hiding Diagnostics');
+};
+
+/*
+ * show() Show the Diagnostics panel
+ */
+diag.prototype.show = function() {
+  var dc = document.getElementById('diagnostics-content');
+  dc.style.display = 'block';
+
+  var btn = document.getElementById('diagnosticsToggle');
+  btn.innerText = 'hide';
+  btn.className = '';
+  btn.title = 'hide';
+
+  this.log('Showing Diagnostics');
+};
+
+/*
+ * showRules() Show the rule set
+ */
+diag.prototype.showRules = function() {
   var p = document.createElement('div');
 
   var els =[];
@@ -163,14 +179,14 @@ diag.prototype.rules = function() {
   document.getElementById('diagnostics-content').appendChild(p);
 
   // Logging
-  console.log('Show Rules Panel...');
+  this.log('Showing Rules Panel');
 
 };
 
 /*
- * key() shows the key
+ * showKey() Show the key
  */
-diag.prototype.key = function() {
+diag.prototype.showKey = function() {
   var p = document.createElement('div');
   var s = document.createElement('style');
 
@@ -196,12 +212,42 @@ diag.prototype.key = function() {
   document.getElementById('diagnostics-content').appendChild(p);
 
   // Logging
-  console.log('Show key...');
+  this.log('Showing Key Panel');
 };
 
 /*
- * add(rule)
- * @param <String> rule a rule to validate
+ * showAdd() Show the add panel
+ */
+diag.prototype.showAdd = function() {
+  var p = document.createElement('div');
+      content = ['<input type="text" id="diag-first" size="12" />',
+                '<select id="diag-verb">',
+                '    <option value="in">in</option>',
+                '    <option value="with">with</option>',
+                '</select>',
+                '<input type="text" id="diag-second" size="12" />',
+                '<a href="javascript:void(0)" id="diagnosticsAddRule" class="btn" title="Add Rule">Add Rule</a>'];
+  p.innerHTML = content.join('');
+
+  document.getElementById('diagnostics-content').innerHTML = '';
+  document.getElementById('diagnostics-content').appendChild(p);
+
+  document.getElementById('diagnosticsAddRule').addEventListener('click', function(event) {
+      var f = document.getElementById('diag-first').value,
+          v = document.getElementById('diag-verb').value,
+          s = document.getElementById('diag-second').value;
+
+      self.add(f + ' ' + v + ' ' + s);
+      event.preventDefault();
+  });
+
+  // Logging
+  this.log('Showing Add Panel');
+};
+
+/*
+ * add(rule) Adds a new custom rule to the set
+ * @param <String> rule A rule to validate upon
  */
  diag.prototype.add = function(rule) {
   var elements = rule.split(' '),
@@ -222,7 +268,7 @@ diag.prototype.key = function() {
   }
 
   // Logging
-  console.log('Adding rule: ' + fullRule);
+  this.log('Adding Rule --> ' + fullRule);
  };
 
 
