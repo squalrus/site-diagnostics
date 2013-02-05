@@ -84,9 +84,8 @@
         <div class="container">
             <h3>3. App</h3>
             <p>One script tag will refrence the files and have your site diagnosed with the latest and greatest version of the application.</p>
-            <p>THis will also install a dashboard to be used for evaluating the markup of the software.</p>
+            <p>This will also install a dashboard to be used for evaluating the markup of the software.</p>
             <p><code>&lt;script src="something.com/diagnostics-latest.min.js"&gt;&lt;/script&gt;</code></p>
-            <p>[COMING SOON]</p>
 
             <a href="#" id="try-diagnostics" class="btn btn-diagnose">Try It!</a>
         </div>
@@ -112,11 +111,11 @@
             document.body.appendChild(script);
 
             // Add css file - <link rel="stylesheet" type="text/css" href="css/panels.css" />
-            var style = document.createElement('style');
-            style.rel = 'stylesheet';
-            style.type = 'text/css';
-            style.href = 'css/diagnostics.css';
-            document.head.appendChild(style);
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'css/diagnostics-latest.css';
+            document.head.appendChild(link);
 
             event.preventDefault();
         });
