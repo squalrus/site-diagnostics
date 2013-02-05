@@ -87,6 +87,8 @@
             <p>THis will also install a dashboard to be used for evaluating the markup of the software.</p>
             <p><code>&lt;script src="something.com/diagnostics-latest.min.js"&gt;&lt;/script&gt;</code></p>
             <p>[COMING SOON]</p>
+
+            <a href="#" id="try-diagnostics" class="btn btn-diagnose">Try It!</a>
         </div>
     </section>
 
@@ -100,6 +102,24 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
+    </script>
+
+    <script>
+        document.getElementById('try-diagnostics').addEventListener('click', function(event) {
+            // Add javascript file
+            var script = document.createElement('script');
+            script.src = 'js/diagnostics-latest.js';
+            document.body.appendChild(script);
+
+            // Add css file - <link rel="stylesheet" type="text/css" href="css/panels.css" />
+            var style = document.createElement('style');
+            style.rel = 'stylesheet';
+            style.type = 'text/css';
+            style.href = 'css/diagnostics.css';
+            document.head.appendChild(style);
+
+            event.preventDefault();
+        });
     </script>
 
     <script src="http://chadschulz.com/js/cs.responsive.js"></script>
