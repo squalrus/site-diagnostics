@@ -1,12 +1,12 @@
 /*
 * diagnostics full js
 * Freely distributed under the MIT license.
-* @version 0.1.0
+* @version 0.9.0
 * @author Chad Schulz
 */
 var diag = function() {
 
-  this.VERSION = '0.1.0';
+  this.VERSION = '0.9.0';
 
   // List of styling rules
   this._r = [
@@ -60,6 +60,10 @@ var diag = function() {
   this.initialize();
 };
 
+/*
+ * log(msg) Log the console message
+ * @param <String> msg The message to log
+ */
 diag.prototype.log = function(msg) {
   if(console && console.log) {
     console.log('Site Diagnosics: ' + msg);
@@ -88,12 +92,24 @@ diag.prototype.run = function() {
 diag.prototype.buildDashboard = function() {
 
   // Build the dashboard element
-  var title = ['<div class="title">Diagnostics</div>',
-              '<a href="javascript:void(0)" id="diagnosticsRun" class="btn" title="Run Diagnostics">Run Diagnostics</a>'];
+  var diagnostics = document.createElement('div');
+  diagnostics.id = 'diagnostics-dashboard';
 
-  var dashboard = document.getElementById('diagnostics-title');
+  var dashboard = ['<div id="diagnostics-title">',
+                      '<span class="title">Diagnostics</span>',
+                      '<a href="#" id="diagnosticsRun" class="btn" title="Run!">Run!</a>',
+                    '</div>',
+                    '<div id="diagnostics-content"></div>',
+                    '<ul>',
+                      '<li><a href="#" id="diagnosticsToggle" title="Hide">hide</a></li>',
+                      '<li><a href="#" id="diagnosticsAdd" title="Add">add</a></li>',
+                      '<li><a href="#" id="diagnosticsRules" title="Show Rules">Rules</a></li>',
+                      '<li><a href="#" id="diagnosticsKey" title="Show Key">Key</a></li>',
+                    '</ul>'];
 
-  dashboard.innerHTML = title.join('');
+  diagnostics.innerHTML = dashboard.join('');
+
+  document.body.appendChild(diagnostics);
 
 
   var self = this;
@@ -219,7 +235,8 @@ diag.prototype.showKey = function() {
  * showAdd() Show the add panel
  */
 diag.prototype.showAdd = function() {
-  var p = document.createElement('div');
+  var p = document.createElement('div'),
+      self = this,
       content = ['<input type="text" id="diag-first" size="12" />',
                 '<select id="diag-verb">',
                 '    <option value="in">in</option>',
@@ -233,12 +250,12 @@ diag.prototype.showAdd = function() {
   document.getElementById('diagnostics-content').appendChild(p);
 
   document.getElementById('diagnosticsAddRule').addEventListener('click', function(event) {
-      var f = document.getElementById('diag-first').value,
-          v = document.getElementById('diag-verb').value,
-          s = document.getElementById('diag-second').value;
+    var f = document.getElementById('diag-first').value,
+        v = document.getElementById('diag-verb').value,
+        s = document.getElementById('diag-second').value;
 
-      self.add(f + ' ' + v + ' ' + s);
-      event.preventDefault();
+    self.add(f + ' ' + v + ' ' + s);
+    event.preventDefault();
   });
 
   // Logging
@@ -258,11 +275,11 @@ diag.prototype.showAdd = function() {
 
   switch (action) {
     case 'in':
-      fullRule = second + ' ' + first + ' ' + this.highlite;
+      fullRule = second + ' ' + first + ' ' + this._highlite;
       this._r.push(fullRule);
       break;
     case 'with':
-      fullRule = second + first + ' ' + this.highlite;
+      fullRule = second + first + ' ' + this._highlite;
       this._r.push(fullRule);
       break;
   }
