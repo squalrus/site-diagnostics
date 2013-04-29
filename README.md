@@ -14,19 +14,19 @@ Include the JavaScript file in your application and run the diagnostics with eas
 
 #### Current API
 
-```diagnostics.run()
+```diagnostics.run()```
 
 Details: Execute the current styling rules by adding them to the page.
 
-```diagnostics.rules()
+```diagnostics.rules()```
 
 Details: Show a panel of the current styling rules applied.
 
-```diagnostics.key()
+```diagnostics.key()```
 
 Details: Show a panel of a key for the styling rules applied.
 
-```diagnostics.add('el1 in el2')
+```diagnostics.add('el1 in el2')```
 
 Details: Add a custom layout rule as a string. Use keyword 'in' to create the rule of 'element1 in element2'.
 
@@ -34,7 +34,7 @@ Example: diagnostics.add('.parent in .child') (will highlight parent if found in
 
 #### Roadmap
 
-```diagnostics.add('el1 with el2')
+```diagnostics.add('el1 with el2')```
 
 Details: Add a custom layout rule as a string. Use keyword 'with' to create the rule of 'element1 with element2'.
 
