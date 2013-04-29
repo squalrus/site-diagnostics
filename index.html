@@ -2,22 +2,19 @@
 <html>
 <head>
     <title>Site Diagnostics</title>
-    <link rel="stylesheet" type="text/css" href="http://chadschulz.com/css/cs.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://chadschulz.com/css/cs.responsive.min.css" />
+    <link rel="stylesheet" href="http://chadschulz.com/css/cs.css" />
+    <link rel="stylesheet" href="http://chadschulz.com/css/cs.responsive.css" />
 
-    <!-- RESPONSIVE -->
+    <!-- MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
     <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
 <body>
-    <nav id="navbar" class="navbar">
+    <nav class="navbar navbar-fixed">
         <div class="container">
-            <ul>
-                <li><a href="http://chadschulz.com/">Chad Schulz</a></li>
-                <li class="current"><a href="http://squalrus.github.com/site-diagnostics/"><i class="icon-"></i> Site Diagnostics</a></li>
-                <li><a href="http://squalrus.github.com/notification-buddy/"><i class="icon-"></i> Notification Buddy</a></li>
+            <ul role="navigation">
+                <li class="logo"><a href="http://squalrus.github.io/site-diagnostics/">Site Diagnostics</a></li>
             </ul>
-            <a href="#" id="nav-button" class="nav-button">&#8801;</a>
         </div>
     </nav>
 
@@ -31,7 +28,7 @@
 
     <section>
         <div class="container">
-            <h3>1. Bookmark Button</h3>
+            <h2>1. Bookmark Button</h2>
             <p>This is the easiest and most straightforward use of the diagnostics. Drag the link to your bookmarks bar and run diagnostics on ANY site! Awesome!</p>
             <a href="javascript:var r = ['div:empty, span:empty,','li:empty, p:empty,','td:empty, th:empty {padding: 0.5em; background: yellow;}','*[style], font, center {outline: 5px solid red;}','*[class=&quot;&quot;], *[id=&quot;&quot;] {outline: 5px dotted red;}','img[alt=&quot;&quot;] {border: 3px dotted red;}','img:not([alt]) {border: 5px solid red;}','img[title=&quot;&quot;] {outline: 3px dotted fuchsia;}','img:not([title]) {outline: 5px solid fuchsia;}','table:not([summary]) {outline: 5px solid red;}','table[summary=&quot;&quot;] {outline: 3px dotted red;}','th {border: 2px solid red;}','th[scope=&quot;col&quot;], th[scope=&quot;row&quot;] {border: none;}','a[href]:not([title]) {border: 5px solid red;}','a[title=&quot;&quot;] {outline: 3px dotted red;}','a[href=&quot;#&quot;] {background: lime;}','a[href=&quot;&quot;] {background: fuchsia;}'];var s = document.createElement('style');s.innerHTML = this.r.join('');document.head.appendChild(s);void(0);" class="btn btn-diagnose">Diagnose!</a>
         </div>
@@ -39,7 +36,7 @@
 
     <section>
         <div class="container">
-            <h3>2. Installing in application</h3>
+            <h2>2. Installing in application</h2>
             <p>Include the JavaScript file in your application and run the diagnostics with easy commands in your browser's console window.</p>
 
             <a href="https://github.com/squalrus/site-diagnostics" class="btn btn-diagnose" target="_blank">Download!</a>
@@ -78,7 +75,7 @@
 
     <section>
         <div class="container">
-            <h3>3. App</h3>
+            <h2>3. App</h2>
             <p>One script tag will refrence the files and have your site diagnosed with the latest and greatest version of the application.</p>
             <p>This will also install a dashboard to be used for evaluating the markup of the software.</p>
             <p><code>&lt;script src="something.com/diagnostics-latest.min.js"&gt;&lt;/script&gt;</code></p>
